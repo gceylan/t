@@ -3,100 +3,71 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="TR" lang="tr">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript" src="js/jquery.js"></script>
-    <link href="css/style.css" type= "text/css" rel="stylesheet" />
-    <meta http-equiv="Content-Script-Type" content="text/javascript">
 
-    <style>
-      a.foo { background:url(options_default.png) no-repeat; text-indent:-9999px;
-        border:1px solid #ddd; width:20px;cursor:pointer;
+    <script type="text/javascript">
+      function LinkBox(div) {
+
+        if($(div).next(".LinkBoxArea").is(".LinkBoxAreaOpen")){
+          $(div).next(".LinkBoxArea").removeClass("LinkBoxAreaOpen");
+        }
+        else {
+          // daha önceden açılmış bir kutular varsa hepsini kapatalım
+          $('.LinkBox').next(".LinkBoxArea").removeClass("LinkBoxAreaOpen");
+          $(div).next(".LinkBoxArea").addClass("LinkBoxAreaOpen");
+        }
       }
 
-      label {display:none;}
-      .Label {display:inline;}
-      .buyuk { font-size:30px;}
-      input { margin:50px;}
-    </style>
+      function InfoBox(div) {
+        var Type = ".InfoBox"
+        var Area = ".InfoBoxArea"
+        var AreaOpen = "InfoBoxAreaOpen"
+
+        if($(div).next(Area).is('.' + AreaOpen)){
+          $(div).next(Area).removeClass(AreaOpen);
+        }
+        else {
+          // daha önceden açılmış bir kutular varsa hepsini kapatalım
+          $(Type).next(Area).removeClass(AreaOpen);
+          $(div).next(Area).addClass(AreaOpen);
+        }
+      }
+
+    </script>
 
   </head>
 
   <body>
+    <label class="LinkBox" onclick="LinkBox(this);"></label>
+    <div class="LinkBoxArea">
+      <a href="#" class="crap" >Olgu Bazlı Rapor</a>
+      <a href="#" class="nrap" >Düğüm Bazlı Rapor</a>
+      <a href="#" class="refr" >Yenile</a>
+      <a href="#" class="edit" >Düzenle</a>
+      <a href="#" class="copy" >Kopyala</a>
+      <a href="#" class="del"  >Sil</a>
+    </div>
 
-
-    <a href="#" class="foo"
-
-      onclick="
-      // $('input[name*=\'selected\']').attr('checked', this.checked);
-      $('label').attr('LabelSelected', this.checked);
-      $(this).addClass('buyuk');
-      $('label').addClass('Label');
-      }
-      "
-      >foo</a>
-    <label for="">hmmmmmmmmmmmm</label>
-
-  
-
-
-<h2>
-  <a onclick="location = '/admin/new'" class="button">Ekle</a>
-  <a onclick="$('form').submit();" class="button">Sil</a>
-</h2>
-
- <script type="text/javascript">
-  $(document).ready(function(){
-	$(".CheckBoxClass").change(function(){
-		if($(this).is(":checked")){
-			$(this).next("label").addClass("LabelSelected");
-		}else{
-			$(this).next("label").removeClass("LabelSelected");
-		}
-	});
-	$(".RadioClass").change(function(){
-		if($(this).is(":checked")){
-			$(".RadioSelected:not(:checked)").removeClass("RadioSelected");
-			$(this).next("label").addClass("RadioSelected");
-		}
-	});
-});
-</script>
-
-<form action="/admin/selectlistdel" method="post" enctype="multipart/form-data">
-  <table class="list">
-    <thead>
-      <tr>
-        <th width="1">
-          <input type="checkbox" id="CheckBox-x" class="CheckBoxClass"
-          onclick="
-            $('input[name*=\'selected\']').attr('checked', this.checked);
-            $('label').attr('LabelSelected', this.checked);
-            if($('input[name*=\'selected\']').is(':checked')){
-              $('label').addClass('LabelSelected');
-            } else{
-              $('label').removeClass('LabelSelected');
-            }
-          " />
-	  <label id="Label-x" for="CheckBox-x" class="CheckBoxLabelClass"></label>
-        </th>
-        <th>Duyuru Başlığı</th>
-      </tr>
-    </thead>
-    <tbody>
+    <label class="InfoBox" onclick="InfoBox(this)" ></label>
+    <div class="InfoBoxArea">
+      <h3>Başlık</h3>
+      <table border="0">
         <tr>
-          <td>
-            <input type="checkbox" id="CheckBox1" class="CheckBoxClass" name="selected[]" value="1" />
-	    <label id="Label1" for="CheckBox1" class="CheckBoxLabelClass"></label>
-          </td>
-          <td>Başlık</td>
+          <th>Adı</th><td>Emin</td>
         </tr>
-    </tbody>
-  </table>
-</form>
-
+        <tr>
+          <th>Soyadı</th><td>Eker</td>
+        </tr>
+        <tr>
+          <th>Yaş</th><td>21</td>
+        </tr>
+        <tr>
+          <th>Doğum Yeri</th><td>Çorum / İskilip</td>
+        </tr>
+      </table>
+    </div>
 
   </body>
-
 </html>
-
-
 
