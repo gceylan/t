@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="TR" lang="tr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <script type="text/javascript">
+      function LinkBox(div) {
+
+        if($(div).next(".LinkBoxArea").is(".LinkBoxAreaOpen")){
+          $(div).next(".LinkBoxArea").removeClass("LinkBoxAreaOpen");
+        }
+        else {
+          // daha önceden açılmış bir kutular varsa hepsini kapatalım
+          $('.LinkBox').next(".LinkBoxArea").removeClass("LinkBoxAreaOpen");
+          $(div).next(".LinkBoxArea").addClass("LinkBoxAreaOpen");
+        }
+      }
+
+      function InfoBox(div) {
+        var Type = ".InfoBox"
+        var Area = ".InfoBoxArea"
+        var AreaOpen = "InfoBoxAreaOpen"
+
+        if($(div).next(Area).is('.' + AreaOpen)){
+          $(div).next(Area).removeClass(AreaOpen);
+        }
+        else {
+          // daha önceden açılmış bir kutular varsa hepsini kapatalım
+          $(Type).next(Area).removeClass(AreaOpen);
+          $(div).next(Area).addClass(AreaOpen);
+        }
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    <label class="LinkBox" onclick="LinkBox(this);"></label>
+    <div class="LinkBoxArea">
+      <a href="#" class="crap" >Olgu Bazlı Rapor</a>
+      <a href="#" class="nrap" >Düğüm Bazlı Rapor</a>
+      <a href="#" class="refr" >Yenile</a>
+      <a href="#" class="edit" >Düzenle</a>
+      <a href="#" class="copy" >Kopyala</a>
+      <a href="#" class="del"  >Sil</a>
+    </div>
+
+    <label class="InfoBox" onclick="InfoBox(this)" ></label>
+    <div class="InfoBoxArea">
+      <h3>Başlık</h3>
+      <table border="0">
+        <tr>
+          <th>Adı</th><td>Emin</td>
+        </tr>
+        <tr>
+          <th>Soyadı</th><td>Eker</td>
+        </tr>
+        <tr>
+          <th>Yaş</th><td>21</td>
+        </tr>
+        <tr>
+          <th>Doğum Yeri</th><td>Çorum / İskilip</td>
+        </tr>
+      </table>
+    </div>
+
+  </body>
+</html>
+
