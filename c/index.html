@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="TR" lang="tr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script type="text/javascript">
+      function link(div) {
+        var this_id = $(this).attr("id");
+        var div = "div#" + this_id;
+        var action = "slow";
+        var item = $(this).next().css("display");
+        var next_div = $(this).next().attr("id");
+        if (next_div == this_id){
+          (item == "none") ? $(this).next().show(action) : $(this).next().hide(action);
+        }
+      }
+
+      $(function(){
+        $('.LinkBox').click(link);
+      });
+    </script>
+
+  </head>
+
+  <body>
+    <label class="LinkBox" id="hop"></label>
+    <div class="LinkBoxArea" id="hop">
+      <a href="#" class="crap" >Olgu Bazlı Rapor</a>
+      <a href="#" class="nrap" >Düğüm Bazlı Rapor</a>
+      <a href="#" class="refr" >Yenile</a>
+      <a href="#" class="edit" >Düzenle</a>
+      <a href="#" class="copy" >Kopyala</a>
+      <a href="#" class="del"  >Sil</a>
+    </div>
+
+    <label class="LinkBox" id="hop"></label>
+    <div class="LinkBoxArea" id="hop">
+      <a href="#" class="crap" >Olgu Bazlı Rapor</a>
+    </div>
+
+  </body>
+</html>
+
