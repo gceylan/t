@@ -26,12 +26,12 @@ label.LinkBox {
 }
 .LinkBoxAreaOpen { display:inline; }
 
-a.crap { background:url(/var/www/public/img/icon/24x24/chart.png)  no-repeat; }
-a.nrap { background:url(/var/www/public/img/icon/24x24/chart_pie.png) no-repeat; }
-a.refr { background:url(/var/www/public/img/icon/24x24/refresh.png)  no-repeat; }
-a.edit { background:url(/var/www/public/img/icon/24x24/edit.png) no-repeat; }
-a.copy { background:url(/var/www/public/img/icon/24x24/comments.png) no-repeat; }
-a.del  { background:url(/var/www/public/img/icon/24x24/delete.png) no-repeat; }
+a.crap { background:url(../img/chart.png)  no-repeat; }
+a.nrap { background:url(../img/chart.png) no-repeat; }
+a.refr { background:url(../img/chart.png)  no-repeat; }
+a.edit { background:url(../img/chart.png) no-repeat; }
+a.copy { background:url(../img/chart.png) no-repeat; }
+a.del  { background:url(../img/chart.png) no-repeat; }
 
 
 
