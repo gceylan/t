@@ -20,6 +20,9 @@
 
       $(function(){
         $('.LinkBox').click(link);
+        $('#kapat').click(function(){
+			$('.LinkBoxArea').fadeOut(500);
+		});
       });
     </script>
 
@@ -40,6 +43,8 @@
     <div class="LinkBoxArea" id="hop">
       <a href="#" class="crap" >Olgu Bazlı Rapor</a>
     </div>
+    
+    <div id="kapat"></div>
 
   </body>
 </html>
