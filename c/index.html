@@ -14,13 +14,17 @@
         var item = $(this).next().css("display");
         var next_div = $(this).next().attr("id");
         if (next_div == this_id){
-          (item == "none") ? $(this).next().show(action) : $(this).next().hide(action);
+          if(item == "none"){
+			  $(this).next().show(action);
+		  }else {
+			  $(this).next().hide(action);
+		  }
         }
       }
 
       $(function(){
-        $('.LinkBox').click(link);
-        $('#kapat').click(function(){
+        $('.LinkBox').mouseup(link);
+		$('body').mousedown(function(){
 			$('.LinkBoxArea').fadeOut(500);
 		});
       });

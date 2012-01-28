@@ -69,9 +69,7 @@ label.InfoBox {
 }
 .InfoBoxAreaOpen { display:inline; }
 
-
 #kapat {
-  background-color: yellow;
-  width:600px;
+  width:950px;
   height:600px;
 }
